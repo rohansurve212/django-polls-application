@@ -22,10 +22,10 @@ That led me to create an algorithm that processes these input strings such that 
 
 In my final solution, I implemented a **Custom Model Manager** named CustomManager that has a custom manager method named matching_alphanumeric() that filters a queryset based on whether the alphanumeric characters of the specified field match the alphanumeric characters of the provided query string. It then raises a validation error if a corresponding match is found, and the ID of the matched object does not match the ID of the current object. I also indexed the two database tables on columns **question_text** and **choice_text** respectively to improves the speed of data retrieval operations on them.
 
-Please check the polls/models.py file for the actual implementation. Thank you.
+Please check the [polls/models.py](https://github.com/rohansurve212/django-polls-application/blob/main/polls/models.py) file for the actual implementation. Thank you.
 
 ## My Solution to Part 2 of the Challenge
-The polls/models.py file contains the solution code. I have defined a custom Django manager named CustomManager, which contains a custom method named matching_alphanumeric(). The manager is then used in the two models named Question and Choice.
+The [polls/models.py](https://github.com/rohansurve212/django-polls-application/blob/main/polls/models.py) file contains the solution code. I have defined a custom Django manager named CustomManager, which contains a custom method named matching_alphanumeric(). The manager is then used in the two models named Question and Choice.
 
 The matching_alphanumeric() method takes two arguments: field_name and query_string. The method then retrieves the QuerySet for the current model instance and iterates over it. For each object in the QuerySet, the method compares the alphanumeric lowercase version of the value in the specified field_name to the alphanumeric lowercase version of the query_string. If the values match, the object is added to a list of matches, which is then returned.
 
