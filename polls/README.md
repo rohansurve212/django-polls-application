@@ -18,7 +18,7 @@ For example, _'Is Python fun to learn?' and 'iS python fun to learn?'_ both of t
 
 So, to ensure case-insensitive uniqueness, I tried using iexact field lookup on both question_text and choice_text. However, I then realized that my solution did not consider non-alphanumeric characters within the text. So, for example, _'Is Python fun to learn?' and 'IsPython fun to learn'_ would still be considered as different question texts, or _'Yes', 'Y e s', and 'Yes!'_ would still be considered as different choice texts.
 
-That led me to create an algorithm that processes these input strings such that quotes, hyphens, exclamations, question marks, and other punctuation marks are disregarded when validating for duplicates.
+That led me to create an algorithm that processes these input strings such that quotes, spaces, hyphens, exclamations, question marks, and other punctuation marks are disregarded when validating for duplicates.
 
 In my final solution, I implemented a **Custom Model Manager** named CustomManager that has a custom manager method named matching_alphanumeric() that filters a queryset based on whether the alphanumeric characters of the specified field match the alphanumeric characters of the provided query string. It then raises a validation error if a corresponding match is found, and the ID of the matched object does not match the ID of the current object. I also indexed the two database tables on columns **question_text** and **choice_text** respectively to improves the speed of data retrieval operations on them.
 
